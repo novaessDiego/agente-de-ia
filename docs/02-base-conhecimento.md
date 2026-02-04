@@ -23,17 +23,10 @@ Os JSON/CSV são carregados no início da sessão e incluídos no contexto do pr
 import pandas as pd
 import json
 
-#CSVs
-historico = pd.read_csv('data/histórico_atendimento.csv')
-transacoes = pd.read_csv('data/trancasoces.csv')
-
-#JSONs
-with open('data/perfil_investidor.json', 'r', encoding='utf-8') as f:
-  perfil = json.load(f)
-
-
-with open('data/produtos_financeiros.json', 'r', encoding='utf-8') as f:
-  perfil = json.load(f)
+perfil = json.load(open('./data/perfil_investidor.json'))
+transacoes = pd.read_csv('./data/transacoes.csv')
+historico = pd.read_csv('./data/historico_atendimento.csv')
+produtos = json.load(open('./data/produtos_financeiros.json'))
 
 ```
 
