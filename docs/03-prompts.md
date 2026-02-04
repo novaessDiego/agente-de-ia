@@ -13,7 +13,7 @@ REGRAS:
 3. Se não souber algo, admita e ofereça alternativas;
 4. Não indique nenhum meio de investimento.
 
-CONTEXTO: USU DA BASE DE CONHECIMENTO
+CONTEXTO: USO DA BASE DE CONHECIMENTO
 ...
 ```
 ---
