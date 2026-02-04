@@ -11,32 +11,31 @@ Descreva se usou os arquivos da pasta `data`, por exemplo:
 | `produtos_financeiros.json` | JSON | Sugerir produtos adequados ao perfil |
 | `transacoes.csv` | CSV | Analisar padrão de gastos do cliente |
 
-> [!TIP]
-> **Quer um dataset mais robusto?** Você pode utilizar datasets públicos do [Hugging Face](https://huggingface.co/datasets) relacionados a finanças, desde que sejam adequados ao contexto do desafio.
-
----
-
-## Adaptações nos Dados
-
-> Você modificou ou expandiu os dados mockados? Descreva aqui.
-
-[Sua descrição aqui]
-
 ---
 
 ## Estratégia de Integração
 
 ### Como os dados são carregados?
-> Descreva como seu agente acessa a base de conhecimento.
+Os JSON/CSV são carregados no início da sessão e incluídos no contexto do prompt.
+É possível carregar os arquivos via código ou simplesmente utilizar Ctrl + C e Ctrl + V
 
-[ex: Os JSON/CSV são carregados no início da sessão e incluídos no contexto do prompt]
+```python
+import pandas as pd
+import json
 
-### Como os dados são usados no prompt?
-> Os dados vão no system prompt? São consultados dinamicamente?
+#CSVs
+historico = pd.read_csv('data/histórico_atendimento.csv')
+transacoes = pd.read_csv('data/trancasoces.csv')
 
-[Sua descrição aqui]
+#JSONs
+with open('data/perfil_investidor.json', 'r', encoding='utf-8') as f:
+  perfil = json.load(f)
 
----
+
+with open('data/produtos_financeiros.json', 'r', encoding='utf-8') as f:
+  perfil = json.load(f)
+
+```
 
 ## Exemplo de Contexto Montado
 
